@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Solanalyzer</title>
+  <title>Solana Memecoin Analyzer</title>
   <style>
     /* Import Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
@@ -139,22 +139,6 @@
       to { opacity: 1; }
     }
 
-    /* Pop-in animation for recommendation text */
-    .pop-in {
-      display: inline-block;
-      animation: popIn 0.5s ease-out forwards;
-      transform: scale(0);
-    }
-    @keyframes popIn {
-      to { transform: scale(1); }
-    }
-
-    /* Styling for recommendation messages */
-    #resolution p {
-      font-size: 1.5rem; /* Larger font size for recommendations */
-      margin: 10px 0;
-    }
-
     /* Scrollbar styling for console-container */
     .console-container::-webkit-scrollbar {
       width: 8px;
@@ -170,7 +154,7 @@
 </head>
 <body>
   <div class="console-container">
-    <h1>Solanalyzer</h1>
+    <h1>Solana Memecoin Analyzer</h1>
     <form id="analyzeForm">
       <label for="contractAddress">Contract Address:</label>
       <input type="text" id="contractAddress" name="contractAddress" placeholder="e.g., 4Nd1m1aU..." required maxlength="100" />
@@ -298,16 +282,16 @@
 
       function displaySuccessResolution(probability, upside) {
         resolutionDiv.innerHTML = `
-          <p class="success flicker fade-in pop-in">✅ Recommended to Invest!</p>
-          <p class="fade-in pop-in">Probability of Success: <strong>${probability}%</strong></p>
-          <p class="fade-in pop-in">Expected Upside: <strong>${upside}x</strong></p>
+          <p class="success flicker fade-in">✅ Recommended to Invest!</p>
+          <p class="fade-in">Probability of Success: <strong>${probability}%</strong></p>
+          <p class="fade-in">Expected Upside: <strong>${upside}x</strong></p>
         `;
       }
 
       function displayScamResolution() {
         resolutionDiv.innerHTML = `
-          <p class="warning flicker fade-in pop-in">⚠️ Warning: Potential Scam Detected!</p>
-          <p class="fade-in pop-in">We advise you not to invest in this memecoin.</p>
+          <p class="warning flicker fade-in">⚠️ Warning: Potential Scam Detected!</p>
+          <p class="fade-in">We advise you not to invest in this memecoin.</p>
         `;
       }
     });
